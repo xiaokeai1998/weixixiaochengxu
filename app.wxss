@@ -1,0 +1,13 @@
+@import "/styles/iconfont.wxss";
+
+
+ page,view,text,swiper,swiper-item,navigator,input,button{
+    box-sizing: border-box;
+ }
+ image{
+     width:100%;
+ }
+ page{
+     /* 定义变量 */
+     --themeColor:#eb4450;
+ }

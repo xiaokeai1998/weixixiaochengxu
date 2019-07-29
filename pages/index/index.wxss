@@ -1,0 +1,3 @@
+page .index-searchInput {
+  background-color: var(--themColor);
+}
