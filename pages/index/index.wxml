@@ -1,8 +1,6 @@
 <searchInput></searchInput>
 <!-- 轮播图的开始 -->
-<view class="index_swiper"
-    
->
+<view class="index_swiper">
   <swiper class="handle-swiper"
     indicator-dots
     autoplay
@@ -17,3 +15,15 @@
   </swiper>
 </view>
 <!-- 轮播图的结束 -->
+
+
+<!-- 导航栏的开始 -->
+  <view class="index_naveCategry">
+      <navigator class="naveCategry"
+         wx:for="{{NavrCategory}}"
+          wx:key="name"
+      >
+          <image mode="widthFix" src="{{item.image_src}}"></image>
+      </navigator>
+  </view>
+<!-- 导航栏的结束 -->

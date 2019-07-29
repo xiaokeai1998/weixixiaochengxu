@@ -1,3 +1,10 @@
-.swiper-item image{
-    height: 240rpx;
+.swiper-item image {
+  height: 340rpx;
+}
+.index_naveCategry {
+  display: flex;
+}
+.index_naveCategry .naveCategry {
+  flex: 1;
+  padding:20rpx;
 }
