@@ -1,6 +1,7 @@
-
 <!-- 搜索开始 -->
-<view class="index-searchInput">
-    <navigator class="search-item">搜索</navigator>
+<view class="Search-input">
+    <view class="Search-botton">
+        <navigator>搜索</navigator>
+    </view>
 </view>
 <!-- 搜索结束 -->

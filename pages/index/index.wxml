@@ -1,3 +1,19 @@
 <searchInput></searchInput>
-
-<!-- 搜索开始 -->
+<!-- 轮播图的开始 -->
+<view class="index_swiper"
+    
+>
+  <swiper class="handle-swiper"
+    indicator-dots
+    autoplay
+    circular
+  >
+    <swiper-item class="handle-swiper-item"
+      wx:for="{{SwiperList}}"
+      wx:key="goods_id"
+    >
+      <image mode="widhtFix" src="{{item.image_src}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 轮播图的结束 -->
