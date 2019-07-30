@@ -6,5 +6,22 @@
 }
 .index_naveCategry .naveCategry {
   flex: 1;
-  padding:20rpx;
+  padding: 20rpx;
+}
+.Floor_index .index_floor .Floor_list {
+  padding: 0 10rpx;
+}
+.Floor_index .index_floor .Floor_list navigator {
+  width: 33.3%;
+  float: left;
+}
+.Floor_index .index_floor .Floor_list navigator:nth-last-child( -n + 4 ) {
+  height: 207.97413793rpx;
+  border-left: 10rpx solid #fff;
+}
+.Floor_index .index_floor .Floor_list navigator:nth-last-child( -n + 4) {
+  border-bottom: 10rpx solid #ffff;
+}
+.Floor_index .index_floor .Floor_list navigator image {
+  height: 100%;
 }

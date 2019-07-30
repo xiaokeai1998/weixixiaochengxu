@@ -1,29 +1,41 @@
 <searchInput></searchInput>
 <!-- 轮播图的开始 -->
 <view class="index_swiper">
-  <swiper class="handle-swiper"
-    indicator-dots
-    autoplay
-    circular
-  >
-    <swiper-item class="handle-swiper-item"
-      wx:for="{{SwiperList}}"
-      wx:key="goods_id"
-    >
+  <swiper class="handle-swiper" indicator-dots autoplay circular>
+    <swiper-item class="handle-swiper-item" wx:for="{{SwiperList}}" wx:key="goods_id">
       <image mode="widhtFix" src="{{item.image_src}}"></image>
     </swiper-item>
   </swiper>
 </view>
 <!-- 轮播图的结束 -->
-
-
 <!-- 导航栏的开始 -->
-  <view class="index_naveCategry">
-      <navigator class="naveCategry"
-         wx:for="{{NavrCategory}}"
-          wx:key="name"
-      >
-          <image mode="widthFix" src="{{item.image_src}}"></image>
-      </navigator>
-  </view>
+<view class="index_naveCategry">
+  <navigator class="naveCategry" wx:for="{{NavrCategory}}" wx:key="name">
+    <image mode="widthFix" src="{{item.image_src}}"></image>
+  </navigator>
+</view>
 <!-- 导航栏的结束 -->
+<!-- 楼层栏的开始 -->
+<view class="Floor_index">
+  <view class="index_floor"
+      wx:for="{{FloorList}}"
+      wx:for-index="index1"
+      wx:for-item="item1"
+      wx:key="item"
+>
+    <!-- 标题图片 -->
+    <view class="floor_title"> <image src="{{item1.floor_title.image_src}}" mode="widthFix"></image> </view>
+
+    <!-- 商品内容 -->
+    <view class="Floor_list">
+      <navigator  
+        wx:for="{{item1.product_list}}"
+        wx:for-index="index2"
+        wx:for-item="item2"
+        wx:key="name"
+    > <image src="{{item2.image_src}}" mode="{{index2 === 0 ? 'widthFix': 'scaleToFill'}}"></image> </navigator>
+    </view>
+</view>
+
+</view>
+<!-- 楼层栏的结束 -->
