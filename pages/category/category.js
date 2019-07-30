@@ -1,7 +1,10 @@
+import { request } from "../../request/request.js"
 Page({
   data: {
     // 左边列表数据
-    CategoryList:[],
+    CategoryLeftList:[],
+    // 右侧列表数据
+    CategoryRightList:[]
   },
 //  页面开始的是加载
 onLoad () {
@@ -10,16 +13,17 @@ onLoad () {
 },
 // 获取左边分类的数据
 getCategoryList(){
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/categories',
-      success: (result) => {
-        // console.log(result)
-        this.setData({
-          CategoryList:result.data.message
-        })
-      },
-
-    });
+    request({url:"/categories"})
+    .then(result =>{
       
+      // 左侧菜单要的数据
+    const CategoryLeftList = result.map(v => ({cat_id:v.cat_id,cat_name:v.cat_name}));
+    const CategoryRightList = result[0].children
+    console.log(result)
+      this.setData({
+        CategoryLeftList,
+        CategoryRightList
+      })
+    })
 }
 })
