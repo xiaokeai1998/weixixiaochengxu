@@ -12,8 +12,38 @@ Page({
   },
 //  页面开始的是加载
 onLoad () {
+
+  // 获取缓存的数据,用来判断是否有没有缓存
+ const cates = wx.getStorageSync('cates');
+  // console.log(cates)
+  // 判断是否发送请求
+    if(!cates){
+      // 没有数据，发送请求  
+      this.getCategoryList()
+    }else{
+      // 有换成数据
+      // 判断数据是否过期 假设过期时间是10s
+      if( Date.now() - cates.time >1000){
+        // 过期了
+        this.getCategoryList()
+      }else{
+        // 获取缓存的数据
+        const catesData = cates.data;
+        // 给全局数据进行赋值
+        this.cates = catesData;
+        const CategoryLeftList = this.Cates.map(v => ({ cat_id:  v.cat_id, cat_name: v.cat_name }));
+        const CategoryRightList = this.Cates[0].children
+        // console.log(result)
+          this.setData({
+            CategoryLeftList,
+            CategoryRightList
+          })
+
+      }
+    }
     // h获取页面接口的数据
-    this.getCategoryList()
+   
+      
 },
 // 获取接口返回的数据，数组形式
 Cates:[],
@@ -22,9 +52,11 @@ getCategoryList(){
     request({url:"/categories"})
     .then(result =>{
       this.Cates = result;
-      
+       // 存储数据
+       wx.setStorageSync("cates", {time: Date.now() , data:this.Cates});
+         
       // 左侧菜单要的数据
-    const CategoryLeftList = this.Cates.map(v => ({cat_id:v.cat_id,cat_name:v.cat_name}));
+    const CategoryLeftList = this.Cates.map(v => ({ cat_id:  v.cat_id, cat_name: v.cat_name }));
     const CategoryRightList = this.Cates[0].children
     // console.log(result)
       this.setData({

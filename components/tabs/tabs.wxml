@@ -1,0 +1,15 @@
+
+<view class="tabs">
+    <!-- <view class="tabs_title ">
+        <view class="item active">综合</view>
+        <view class="item">销量</view>
+        <view class="item">价格</view>
+    </view> -->
+    <view class="title_tiem {{item.isActive?'active':''}}"
+         wx:for="{{tabs}}"
+         wx:key="id"
+    >
+    {{item.title}}
+    </view>
+    <view class="tabs_conter">内容</view>
+</view>
