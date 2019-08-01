@@ -1,0 +1,28 @@
+.fist_tab .index_grong {
+  display: flex;
+  border-bottom: 1px solid #eeee;
+}
+.fist_tab .index_grong .images {
+  flex: 1;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.fist_tab .index_grong .images image {
+  width: 90%;
+}
+.fist_tab .index_grong .txet {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.fist_tab .index_grong .txet .goods_name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+.fist_tab .index_grong .txet .goods_pric {
+  color: var(--themeColor);
+  font-weight: 600;
+}

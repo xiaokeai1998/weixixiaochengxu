@@ -1,4 +1,24 @@
 <searchInput></searchInput>
-<tabs>{{tabs}}</tabs>
 <!-- tabs栏 -->
+<tabs tabs="{{tabs}}" binditemChange="handleItemChang">
+   <view wx:if="{{tabs[0].isActive}}">
+       <view class="fist_tab">
+           <navigator class="index_grong" >
+               <!-- 左侧的图片 -->
+               <view class="images"><image mode="widthFix" src="https://api.zbztb.cn/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"></image></view>
+               <view class="txet">
+                   <view class="goods_name">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Repellat quis ducimus cum qui ea enim illum placeat optio aliquam, suscipit 
+                        iure laudantium voluptatibus totam labore error tempore. Iusto, dolorum officia.</view>
+                    <view class="goods_pric">￥ 3199</view>
+               </view>
+               
+           </navigator>
+             
+       </view>
+   </view>
+    <view wx:elif="{{tabs[1].isActive}}">正在开发。。</view>
+    <view wx:elif="{{tabs[2].isActive}}">正在开发。。</view>
+</tabs>
+
 
