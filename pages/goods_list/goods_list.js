@@ -1,4 +1,5 @@
-import { request } from "../../request/request.js"
+import { request } from "../../request/request.js";
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
   data:{
     // 给标题定义一个数据
@@ -29,10 +30,12 @@ Page({
   },
 
   // 获取列表数据的方法
-  getGoods_list(){
-    request({url:"/goods/search",data:this.QueryParams})
+   async getGoods_list(){
+    const result = await request({url:"/goods/search",data:this.QueryParams})
+    // console.log(result)
+    // console.log(result)
     .then(result =>{
-      console.log(result)
+      // console.log(result)
       // 计算总页数
       this.TotalPages = Math.ceil(result.total / this.QueryParams.pagesize)
       // console.log(this.TotalPages)
@@ -42,7 +45,10 @@ Page({
         gooodsLIst:[...this.data.gooodsLIst,...result.goods]
         
       })
+       // 关闭页面刷新的下拉效果
+       wx.stopPullDownRefresh()
     })
+      
   },
     // 子组件触发
     handleItemChang(e){
@@ -59,12 +65,29 @@ Page({
 onReachBottom(){
   // console.log("已经到底了，别拉了")
   if(this.QueryParams.pagenum >= this.TotalPages){
-     console.log("没有数据")
+    //  console.log("没有数据")
+    // 提示框    Toast会自动的弹出显示框
+    wx.showToast({
+      title: '已经没有下一页数据了',
+      icon:'none'
+    });
+      
   }else{
     // 还存在下一页数据，要获取出来
     this.QueryParams.pagenum ++ ;
     this.getGoods_list();
   }
+},
+
+// 出发下拉的时候触发的
+onPullDownRefresh(){
+  this.QueryParams.pagenum = 1;
+  this.setData({
+    // 重置数组
+    gooodsLIst:[]
+  })
+  // 重新发送请求
+  this.getGoods_list()
 }
 
 })
