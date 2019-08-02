@@ -9,7 +9,7 @@ Page({
 
     ],
     // 页面要渲染的商品动态数据
-    gooodsList:[]
+    gooodsLIst:[]
   },
 
     // 接口用的参数
@@ -19,6 +19,8 @@ Page({
       pagenum: 1,//页码
       pagesize: 10,//页容量
     },
+    // 全局的总页数
+    TotalPages: 1,
   // 当前页面的加载
   onLoad(options){
     // 形参可以获取到url上面的参数
@@ -30,12 +32,17 @@ Page({
   getGoods_list(){
     request({url:"/goods/search",data:this.QueryParams})
     .then(result =>{
-      // console.log(result)
+      console.log(result)
+      // 计算总页数
+      this.TotalPages = Math.ceil(result.total / this.QueryParams.pagesize)
+      // console.log(this.TotalPages)
+
       this.setData({
-        gooodsLIst:result.goods
+        // 要拼接数据
+        gooodsLIst:[...this.data.gooodsLIst,...result.goods]
+        
       })
     })
-
   },
     // 子组件触发
     handleItemChang(e){
@@ -47,7 +54,17 @@ Page({
       // 循环修改tabs数组
       tabs.forEach((v,i) =>i === index?v.isActive=true:v.isActive=false);
       this.setData({tabs});
+  },
+// 页面触底事件的触发
+onReachBottom(){
+  // console.log("已经到底了，别拉了")
+  if(this.QueryParams.pagenum >= this.TotalPages){
+     console.log("没有数据")
+  }else{
+    // 还存在下一页数据，要获取出来
+    this.QueryParams.pagenum ++ ;
+    this.getGoods_list();
   }
-
+}
 
 })
