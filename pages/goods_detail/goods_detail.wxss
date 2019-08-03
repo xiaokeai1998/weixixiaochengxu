@@ -1,1 +1,104 @@
-/* pages/goods_detail/goods_detail.wxss */
+.detail_swiper .detail_image {
+  height: 60vw;
+  text-align: center;
+}
+.detail_swiper .detail_image image {
+  width: 50%;
+}
+.index_pric .goods_price {
+  color: var(--themeColor);
+  font-weight: 600;
+  font-size: 32rpex;
+  padding: 20rpx;
+}
+.index_pric .goods_siel {
+  display: flex;
+  border-bottom: 5rpx solid #eeeeee;
+  padding: 20rpx 10rpx;
+}
+.index_pric .goods_siel .goods_name {
+  flex: 4;
+  padding: 20rpx 10rpx;
+}
+.index_pric .goods_siel .goods_name_iocn {
+  font-size: 34rpx;
+  flex: 1;
+  border-left: 1px solid #969696;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx;
+}
+.index_pric .goods_siel .goods_name_iocn .iocn_name {
+  font-size: 28rpx;
+  padding-top: 20rpx;
+}
+.index_pric .goods_siel .goods_name_iocn .iconfont {
+  font-size: 60rpx;
+}
+.goods_detail .detail_name {
+  font-size: 30rpx;
+  color: var(--themeColor);
+  font-weight: 600;
+  padding: 20rpx 10rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+.btn_title {
+  height: 90rpx;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  border-top: 1px solid #eeeeee;
+  background: #eeeeee;
+}
+.btn_title .btn_kefu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+.btn_title .btn_fengx {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.btn_title .cat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+.btn_title .btn_cart {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #fba500;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.btn_title .btn_buy {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #fb4400;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 500;
+}

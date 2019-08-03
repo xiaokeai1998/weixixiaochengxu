@@ -1,4 +1,5 @@
 import { request } from "../../request/request.js"
+import regeneratorRuntime from '../../lib/runtime/runtime'
 Page({
   data: {
     // 左边列表数据
@@ -48,9 +49,8 @@ onLoad () {
 // 获取接口返回的数据，数组形式
 Cates:[],
 // 获取左边分类的数据
-getCategoryList(){
-    request({url:"/categories"})
-    .then(result =>{
+async getCategoryList(){
+   const result = await request({url:"/categories"})
       this.Cates = result;
        // 存储数据
        wx.setStorageSync("cates", {time: Date.now() , data:this.Cates});
@@ -63,7 +63,6 @@ getCategoryList(){
         CategoryLeftList,
         CategoryRightList
       })
-    })
 },
 
 // 给左侧添加绑定事件

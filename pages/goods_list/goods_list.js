@@ -32,23 +32,15 @@ Page({
   // 获取列表数据的方法
    async getGoods_list(){
     const result = await request({url:"/goods/search",data:this.QueryParams})
-    // console.log(result)
-    // console.log(result)
-    .then(result =>{
-      // console.log(result)
       // 计算总页数
       this.TotalPages = Math.ceil(result.total / this.QueryParams.pagesize)
       // console.log(this.TotalPages)
-
       this.setData({
         // 要拼接数据
         gooodsLIst:[...this.data.gooodsLIst,...result.goods]
-        
       })
        // 关闭页面刷新的下拉效果
        wx.stopPullDownRefresh()
-    })
-      
   },
     // 子组件触发
     handleItemChang(e){

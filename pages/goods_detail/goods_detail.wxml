@@ -1,2 +1,66 @@
-<!--pages/goods_detail/goods_detail.wxml-->
-<text>pages/goods_detail/goods_detail.wxml</text>
+<!-- 轮播图的开始 -->
+<view class="detail_swiper">
+    <swiper class="detail_image"
+        indicator-dots
+        autoplay
+        circular
+    >
+        <swiper-item
+            wx:for="{{goodsInfo.pics}}"
+            wx:key="price_id"
+            bindtap="handlePreviewImage"
+            data-index="{{index}}"
+        >
+            <image mode="widthFix" src="{{item.pics_mid}}"></image>
+        </swiper-item>
+    </swiper>
+
+</view>
+<!-- 轮播图的结束 -->
+
+<!-- 商品价格的开始 -->
+<view class="index_pric">
+    <view class="goods_price">￥ {{goodsInfo.goods_price}}</view>
+    <view class="goods_siel">
+         <view class="goods_name">{{goodsInfo.goods_name}}</view>
+        <view class="goods_name_iocn">
+            <text class="iconfont icon-shoucang"></text>
+            <text class="iocn_name">收藏</text>
+        </view>
+    </view>
+</view>
+<!-- 商品价格的结束 -->
+
+<!-- 图文详情的开始 -->
+<view class="goods_detail">
+    <view class="detail_name">图文详情</view>
+    <view class="detail_image">
+        <rich-text nodes="{{goodsInfo.goods_introduce}}"></rich-text>
+    </view>
+</view>
+<!-- 图文详情的结束 -->
+
+
+
+ <!-- 底部工具栏的开始 -->
+
+ <view class="btn_title">
+     <view class="btn_kefu">
+         <text class="iconfont icon-kefu"></text>
+         <text class="kefu">客服</text>
+     </view>
+
+     <view class="btn_fengx">
+         <text class="iconfont icon-yixianshi-"></text>
+         <text class="fengX">分享</text>
+     </view>
+
+     <navigator class="cat" open-type="switchTab" url="/pages/cart/cart">
+         <text class="iconfont icon-gouwuche"></text>
+         <text class="cat_name">购物车</text>
+     </navigator>
+
+     <view class="tool_item btn_cart">加入购物车</view>
+     <view class="tool_item btn_buy">立即购买</view>
+ </view>
+ <!-- 底部工具栏的结束 -->

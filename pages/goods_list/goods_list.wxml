@@ -2,9 +2,10 @@
 <!-- tabs栏 -->
 <tabs tabs="{{tabs}}" binditemChange="handleItemChang">
    <view wx:if="{{tabs[0].isActive}}">
-       <view class="fist_tab"
+       <navigator  class="fist_tab"
             wx:for="{{gooodsLIst}}"
             wx:key="goods_id"
+            url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
        >
            <navigator class="index_grong" >
                <!-- 左侧的图片 -->
@@ -16,7 +17,7 @@
                
            </navigator>
              
-       </view>
+       </navigator>
    </view>
     <view wx:elif="{{tabs[1].isActive}}">正在开发。。</view>
     <view wx:elif="{{tabs[2].isActive}}">正在开发。。</view>

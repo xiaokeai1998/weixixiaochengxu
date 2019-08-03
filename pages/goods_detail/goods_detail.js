@@ -1,66 +1,38 @@
-// pages/goods_detail/goods_detail.js
+import { request } from "../../request/request.js"
+import regeneratorRuntime from '../../lib/runtime/runtime'
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    // 数据的存储
+    goodsInfo:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad(option){
+      // console.log(option)
+      this.getGoodDetail(option.goods_id)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  // 获取商品详情页的数据
+  async getGoodDetail(goods_id){
+      const result = await request({url:"/goods/detail",data:{goods_id}})
+      console.log(result)
+      this.setData({
+        goodsInfo:{
+          goods_name: result.goods_name,
+          goods_price: result.goods_price,
+          pics: result.pics,
+          goods_introduce: result.goods_introduce.replace(/\.webp/g,'.jpg')
+        }
+      })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 给轮播图添加预览效果
+  handlePreviewImage(e){
+      // console.log("已经放大")
+      const {index} = e.currentTarget.dataset;
+      // 构造参数
+      const urls = this.data.goodsInfo.pics.map(v =>v.pics_big);
+      const current = urls[index]
+      wx.previewImage({
+        current,
+        urls
+      }); 
   }
 })
+
