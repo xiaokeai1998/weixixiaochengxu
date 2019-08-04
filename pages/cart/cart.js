@@ -1,66 +1,38 @@
-// pages/cart/cart.js
+import { getSetting, openSetting, chooseAddress } from "../../utils/asyncWx";
+import regeneratorRuntime from '../../lib/runtime/runtime'
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+      address:{}
   },
+  // 获取收获地址的点击事件
+  async handCholeAddress(){
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+          // console.log(result)
+          const result1 = await getSetting();
+          // 获取用户收获地址的权限
+          const scopeAddress = result1.authSetting["scope.address"]
+          // 直接对用户权限进行判断
+      if(scopeAddress === true || scopeAddress === undefined){
+            console.log(result1)
+      }else{
+        // 先打开授权页面
+        await openSetting();
+        const result2 = await chooseAddress();
+        // console.log(result2)
+      }
+      // 在去获取收获地址信息
+       const res2=await chooseAddress();
+    
+    // 1.3 存入到本地存储中
+    // 自己新增 很详细的地址信息
+    res2.all=res2.provinceName+res2.cityName+res2.countyName+res2.detailInfo;
+    wx.setStorageSync("address", res2);
+      
+          
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  onShow(){
+    this.setData({address:wx.getStorageSync("address")||{}});
 
   }
+ 
 })

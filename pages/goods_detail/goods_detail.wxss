@@ -44,6 +44,9 @@
   padding: 20rpx 10rpx;
   border-bottom: 1px solid #eeeeee;
 }
+.goods_detail .detail_image {
+  padding-bottom: 50px;
+}
 .btn_title {
   height: 90rpx;
   width: 100%;
