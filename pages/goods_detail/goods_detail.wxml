@@ -60,7 +60,7 @@
          <text class="cat_name">购物车</text>
      </navigator>
 
-     <view class="tool_item btn_cart">加入购物车</view>
+     <view class="tool_item btn_cart" bindtap="handelCartAdd">加入购物车</view>
      <view class="tool_item btn_buy">立即购买</view>
  </view>
  <!-- 底部工具栏的结束 -->

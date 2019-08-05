@@ -1,3 +1,6 @@
+Page {
+  padding-bottom: 90rpx;
+}
 .cart_name {
   padding: 20rpx;
 }
@@ -16,4 +19,112 @@
 .revice_address .revice_pohen {
   flex: 2;
   text-align: right;
+}
+.cart_main {
+  border-bottom: 1px solid #c1c1c1;
+}
+.cart_main .cart_main_title {
+  color: var(--themeColor);
+  font-size: 30rpx;
+  padding: 20rpx 10rpx;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  font-weight: 600;
+}
+.cart_main .cart_item {
+  display: flex;
+  padding: 20rpx 0;
+}
+.cart_main .cart_item .cart_item_sorp {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_main .cart_item .cart_image {
+  flex: 2;
+  width: 100%;
+  padding-rigt: 20rpx;
+}
+.cart_main .cart_item .cart_item_pirc {
+  flex: 4;
+}
+.cart_main .cart_item .cart_item_pirc .cart_item_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.cart_main .cart_item .cart_item_pirc .item_toll {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx 0;
+}
+.cart_main .cart_item .cart_item_pirc .item_toll .cart_goods_pircs {
+  color: var(--themeColor);
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.cart_main .cart_item .cart_item_pirc .item_toll .item_seil {
+  display: flex;
+}
+.cart_main .cart_item .cart_item_pirc .item_toll .item_seil .jian {
+  border: 1px solid #c1c1c1;
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_main .cart_item .cart_item_pirc .item_toll .item_seil .num {
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15rpx;
+}
+.btn_cart {
+  display: flex;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  border-top: 1px solid #c1c1c1;
+  background: #fff;
+}
+.btn_cart .btn_all_warp {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_cart .total_price_wrap {
+  flex: 2;
+  text-align: right;
+  padding: 10rpx 0;
+}
+.btn_cart .total_price_wrap .toatal_price {
+  font-size: 30rpx;
+}
+.btn_cart .total_price_wrap .toatal_price .price {
+  color: var(--themeColor);
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.btn_cart .total_price_wrap .freight_tips {
+  font-size: 28rpx;
+  color: #9a9497;
+  padding: 10rpx 0;
+}
+.btn_cart .cart_pay {
+  flex: 1;
+  background: #ff0000;
+  color: #fff;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15rpx;
+  font-weight: 600;
 }
