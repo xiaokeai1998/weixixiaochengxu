@@ -32,18 +32,61 @@ export const openSetting = () => {
     })
   }
   
+
+
+/**
+ * promise 形式的wx.chooseAddress 获取收货地址
+ */
+export const chooseAddress = () => {
+  return new Promise((resolve, reject) => {
+    wx.chooseAddress({
+      success: (result) => {
+        resolve(result);
+      },
+      fail: (err) => {
+        reject(err)
+      }
+    });
+  })
+}
+
+
   /**
-   * promise 形式的wx.chooseAddress 获取收货地址
+   * promise 形式的wx.showModal 对话框
+   * @param {object} param0 要传递的参数
    */
-  export const chooseAddress = () => {
+
+  export const showModal = ({ content}) => {
     return new Promise((resolve, reject) => {
-      wx.chooseAddress({
-        success: (result) => {
-          resolve(result);
-        },
-        fail: (err) => {
-          reject(err)
+      wx.showModal({
+        title: "标题",
+        content: content ,
+        success (res) {
+          resolve(res)
         }
-      });
+      })
     })
   }
+  
+
+  /**
+   * promise 形式的wx.showToast 弹出框
+   * @param {object} param0 要传递的参数
+   */
+
+  export const showToast = ({title}) => {
+    return new Promise((resolve, reject) => {
+      wx.showToast({
+        title: title,
+        icon: 'none',
+        success (res) {
+          resolve(res)
+        }
+      })
+    })
+  }
+
+
+
+ 
+    
