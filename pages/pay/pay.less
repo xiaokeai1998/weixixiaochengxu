@@ -1,0 +1,141 @@
+Page{
+    padding-bottom:  90rpx;
+}
+.cart_name{
+    padding: 20rpx;
+    button{
+        width: 50%;
+    }
+}
+
+.revice_address{
+    display: flex;
+    padding: 20rpx 20rpx;
+    font-size: 30rpx;
+    color: #393c40;
+    .revice_name{
+        flex: 4;
+        
+    }
+    .revice_pohen{
+        flex: 2;
+        text-align: right;
+        // background: red;
+    }
+}
+
+.cart_main{
+    
+    .cart_main_title{
+        color: var(--themeColor);
+        font-size: 30rpx;
+        padding: 20rpx 10rpx;
+        border-top: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+        font-weight: 600;
+    }
+    .cart_item{
+        display: flex;
+        padding: 20rpx 0;
+        border-bottom: 1px solid #c1c1c1;
+        padding: 20rpx 0;
+        .cart_item_sorp{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+        .cart_image{
+            flex: 2;
+            width: 100%;
+            padding-right: 20rpx;
+        }
+        
+        .cart_item_pirc{
+            flex: 4;
+           
+            .cart_item_name{
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp:2;
+                font-size: 28rpx;
+                
+         
+            }
+            
+            .item_toll{
+                display: flex;
+                justify-content: space-around;
+                padding: 60rpx;
+                .cart_goods_pircs{
+                    color: var(--themeColor);
+                    font-size: 34rpx;
+                    font-weight: 600;
+                 }
+                 .item_seil{
+                     display: flex;
+                     color: #9a9497;
+                 }  
+                .num{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 15rpx;
+                } 
+            } 
+    }
+
+       
+
+
+
+    }
+}
+
+
+.btn_cart {
+  display: flex;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  border-top: 1px solid #c1c1c1;
+  background: #fff;
+
+   .total_price_wrap {
+        flex: 2;
+        text-align: right;
+        padding: 10rpx 0;
+    
+      .toatal_price {
+          font-size: 30rpx;
+            .price {
+                color: var(--themeColor);
+                font-size: 34rpx;
+                font-weight: 600;
+
+        }
+      }
+  
+     .freight_tips {
+            font-size: 28rpx;
+            color: #9a9497;
+            padding: 10rpx 0;
+      }
+    }
+  
+    .cart_pay {
+        flex: 1;
+        background: #ff0000;
+        color: #fff;
+        font-size: 30rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 15rpx;
+        font-weight: 600;
+        
+    }
+  }

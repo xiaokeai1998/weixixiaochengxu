@@ -87,6 +87,44 @@ export const chooseAddress = () => {
   }
 
 
+   /**
+   * promise 形式的wx.login 登录
+   */
+
+  export const login = () => {
+    return new Promise((resolve, reject) => {
+      wx.login({
+        timeout:10000,
+        success: (result) => {
+          resolve(result)
+        } , fail(err){
+          reject(err)
+        }
+      });
+          
+    })
+  }
+
+
+     /**
+   * 调用小程序内置的支付（真的会扣钱！）
+    * @param {object} pay 要传递的参数
+   */
+
+  export const requestPayment = (pay) => {
+    return new Promise((resolve, reject) => {
+      wx.requestPayment({
+          ...pay,
+        success: (result) => {
+          resolve(result)
+        },fail: (err)=>{
+          reject(err)
+        }
+      });
+        
+    })
+  }
+
 
  
     
