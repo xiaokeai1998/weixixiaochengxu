@@ -44,7 +44,7 @@
         "selectedIconPath": "sttic/tabs/cart.png"
       },
       {
-        "pagePath": "pages/cart/cart",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "sttic/tabs/user_o.png",
         "selectedIconPath": "sttic/tabs/user.png"

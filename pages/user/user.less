@@ -1,0 +1,32 @@
+page{
+    background: #eee;
+}
+
+.bg_image{
+    height: 45vh;
+    overflow: hidden;
+    position: relative;
+    .big_img{
+        image{
+            filter: blur(10rpx)
+        }
+    }
+    .big_img_imahe{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top:50%;
+        image{
+         width: 160rpx;
+        height: 160rpx;
+        border-radius: 50%;
+        }
+        .userName{
+            color:#fff;
+            // padding-bottom: 20rpx;
+        }
+    }
+}
+
+
+// 用户信息

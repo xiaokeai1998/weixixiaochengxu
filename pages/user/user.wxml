@@ -1,2 +1,15 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+
+<view class="bg_image">
+   <!-- 大图片 -->
+   <view class="big_img"><image  src="" mode="widthFix" src="https://b2.bmp.ovh/imgs/2019/08/f25cd6635f81467b.jpg"></image>
+     </view>
+   <!-- 小图片 -->
+    <view class="big_img_imahe">
+        <image  src="" mode="widthFix" src="https://b2.bmp.ovh/imgs/2019/08/f25cd6635f81467b.jpg"></image>
+        <view class="userName">{{userinfo.nickName}}</view>
+     </view>
+</view>
+
+<!-- 用户信息的 -->
+
+

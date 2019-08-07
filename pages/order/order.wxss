@@ -1,1 +1,3 @@
-/* pages/order/order.wxss */
+button {
+    width: 50%;
+}
