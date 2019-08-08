@@ -13,3 +13,6 @@ export const setStorageUserInfo = (userinfo) => {
   export const getStorageUserInfo = () => {
     return wx.getStorageSync("userinfo");
   }
+
+
+  

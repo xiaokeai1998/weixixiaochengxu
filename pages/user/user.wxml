@@ -13,3 +13,73 @@
 <!-- 用户信息的 -->
 
 
+<!-- 内容 -->
+<view class="item_conten">
+    <view class="item_user_main">
+        <view class="item_user_conten">
+            <navigator>
+                <text class="num">0</text>
+               <view class="num_name">收藏店铺</view>
+            </navigator>   
+
+             <navigator url="/pages/collect/collect">
+                <text class="num">2</text>
+               <view class="num_name">收藏商品</view>
+            </navigator>   
+
+             <navigator>
+                <text class="num">3</text>
+               <view class="num_name">关注的商品</view>
+            </navigator>   
+
+             <navigator>
+                <text class="num">4</text>
+               <view class="num_name">我的足迹</view>
+            </navigator>   
+        </view>
+
+
+
+        <!-- 我的订单 -->
+        <view class="our_item_conten">
+            <view class="our_item_name">我的订单</view>
+            <view class="our_item">
+                <navigator  url="/pages/order/order?type=1">
+                    <view class="iconfont icon-ding_dan"></view>
+                    <text class="our_item_pay">全部订单</text>
+                </navigator>
+
+                <navigator  url="/pages/order/order?type=2">
+                    <view class="order_icon iconfont icon-fukuantongzhi"></view>
+                    <text class="our_item_pay">待付款</text>
+                </navigator>
+
+                <navigator  url="/pages/order/order?type=3">
+                    <view class="order_icon iconfont icon-receipt-address"></view>
+                    <text class="our_item_pay">待收货</text>
+                </navigator>
+
+                <navigator >
+                    <view class="order_icon iconfont icon-tuihuotuikuan_dianpu"></view>
+                    <text class="our_item_pay">退款/退货</text>
+                </navigator>
+            </view>
+        </view>
+
+
+        <!-- 收货地址管理 -->
+        <view class="our_addrss">
+            <view class="address">收货管理系统</view>
+        </view>
+
+        <!-- 联系客服 -->
+        <view class="our_item_kefu">
+            <view class="our_kefu">
+              <text class="kefu" >联系客服</text> 
+              <text class="num">000000000</text>
+            </view>
+            <view class="our_yij">意见反馈</view>
+            <view class="our_about">关于我们</view>
+        </view>
+   </view>
+</view>
